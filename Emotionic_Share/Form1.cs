@@ -88,6 +88,8 @@ namespace Emotionic_Share
             Process.Start(session.AuthorizeUri.AbsoluteUri);
         }
 
+
+        //以下つべ(未完成
         private void open_moviefile_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
