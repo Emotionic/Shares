@@ -52,18 +52,21 @@
             this.toolStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.share_mv = new System.Windows.Forms.Button();
-            this.moviefname = new System.Windows.Forms.TextBox();
+            this.movieFname = new System.Windows.Forms.TextBox();
             this.open_moviefile = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.webB_YTup = new System.Windows.Forms.WebBrowser();
             this.tab_tw.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.statusStripYT.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog
             // 
-            this.openFileDialog.Filter = "PNGファイル|*.png|JPEGファイル|*.jpeg;*.jpg|すべてのファイル|*.*";
+            this.openFileDialog.Filter = "MP4ファイル|*.mp4|PNGファイル|*.png|JPEGファイル|*.jpeg;*.jpg|すべてのファイル|*.*";
             // 
             // file_open
             // 
@@ -140,6 +143,7 @@
             // 
             this.tab_tw.Controls.Add(this.tabPage1);
             this.tab_tw.Controls.Add(this.tabPage2);
+            this.tab_tw.Controls.Add(this.tabPage3);
             this.tab_tw.Location = new System.Drawing.Point(3, 2);
             this.tab_tw.Name = "tab_tw";
             this.tab_tw.SelectedIndex = 0;
@@ -199,7 +203,7 @@
             this.tabPage2.Controls.Add(this.movie_title);
             this.tabPage2.Controls.Add(this.statusStripYT);
             this.tabPage2.Controls.Add(this.share_mv);
-            this.tabPage2.Controls.Add(this.moviefname);
+            this.tabPage2.Controls.Add(this.movieFname);
             this.tabPage2.Controls.Add(this.open_moviefile);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -283,12 +287,12 @@
             this.share_mv.UseVisualStyleBackColor = true;
             this.share_mv.Click += new System.EventHandler(this.share_mv_Click);
             // 
-            // moviefname
+            // movieFname
             // 
-            this.moviefname.Location = new System.Drawing.Point(35, 8);
-            this.moviefname.Name = "moviefname";
-            this.moviefname.Size = new System.Drawing.Size(221, 19);
-            this.moviefname.TabIndex = 1;
+            this.movieFname.Location = new System.Drawing.Point(35, 8);
+            this.movieFname.Name = "movieFname";
+            this.movieFname.Size = new System.Drawing.Size(221, 19);
+            this.movieFname.TabIndex = 1;
             // 
             // open_moviefile
             // 
@@ -300,10 +304,31 @@
             this.open_moviefile.UseVisualStyleBackColor = true;
             this.open_moviefile.Click += new System.EventHandler(this.open_moviefile_Click);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.webB_YTup);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(344, 340);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // webB_YTup
+            // 
+            this.webB_YTup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webB_YTup.Location = new System.Drawing.Point(3, 3);
+            this.webB_YTup.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webB_YTup.Name = "webB_YTup";
+            this.webB_YTup.Size = new System.Drawing.Size(338, 334);
+            this.webB_YTup.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(356, 365);
             this.Controls.Add(this.tab_tw);
             this.Name = "Form1";
@@ -318,6 +343,7 @@
             this.tabPage2.PerformLayout();
             this.statusStripYT.ResumeLayout(false);
             this.statusStripYT.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -335,21 +361,23 @@
         private System.Windows.Forms.TextBox tweet_box;
         private System.Windows.Forms.TabControl tab_tw;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button tw_acs;
-        private System.Windows.Forms.Button open_moviefile;
-        private System.Windows.Forms.TextBox moviefname;
-        private System.Windows.Forms.Button share_mv;
-        private System.Windows.Forms.StatusStrip statusStripYT;
-        private System.Windows.Forms.ToolStripStatusLabel toolStatus;
         private System.Windows.Forms.Label _title;
         private System.Windows.Forms.Label _file;
-        private System.Windows.Forms.TextBox movie_title;
         private System.Windows.Forms.Label _description;
-        private System.Windows.Forms.TextBox movie_description;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStatus_tw;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.WebBrowser webB_YTup;
+        internal System.Windows.Forms.TabPage tabPage2;
+        internal System.Windows.Forms.Button open_moviefile;
+        internal System.Windows.Forms.Button share_mv;
+        public System.Windows.Forms.TextBox movie_title;
+        public System.Windows.Forms.TextBox movie_description;
+        public System.Windows.Forms.StatusStrip statusStripYT;
+        public System.Windows.Forms.ToolStripStatusLabel toolStatus;
+        public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        public System.Windows.Forms.TextBox movieFname;
     }
 }
 
