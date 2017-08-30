@@ -75,13 +75,22 @@ namespace Emotionic_Share
                 toolStatus_tw.Text = "You are not authorized yet.";
                 return;
             }
+            if (open_filename.TextLength != 0)
+            {
+                MediaUploadResult img = new MediaUploadResult();
 
-            MediaUploadResult img = new MediaUploadResult();
-
-            img = tokens.Media.Upload(media: new FileInfo(open_filename.Text));
-            //ついーと
-            Status _status = await tokens.Statuses.UpdateAsync(status => tweet_box.Text + " _Tweet_Success!", media_ids => img);
-            toolStatus_tw.Text = "Tweet Success";
+                img = tokens.Media.Upload(media: new FileInfo(open_filename.Text));
+                //ついーと
+                Status _status = await tokens.Statuses.UpdateAsync(status => tweet_box.Text , media_ids => img);
+                toolStatus_tw.Text = "Tweet Success";
+                
+            }
+            else 
+            {
+                Status _status = await tokens.Statuses.UpdateAsync(status => tweet_box.Text );
+                toolStatus_tw.Text = "Tweet Success";
+            }
+            tweet_box.Text = "";
         }
 
         private void tw_acs_Click(object sender, EventArgs e)
@@ -155,9 +164,11 @@ namespace Emotionic_Share
 
         private void text_changed(object sender, EventArgs e)
         {
-            tweet -= 1;
-            TweLength.Text = (tweet).ToString();
-            if (tweet < 0) TweLength.ForeColor = System.Drawing.Color.Red; 
+            
+            //tweet -= 1;
+            TweLength.Text = (tweet-tweet_box.TextLength).ToString();
+            if (tweet-tweet_box.TextLength < 0) TweLength.ForeColor = System.Drawing.Color.Red;
+            else if(tweet-tweet_box.TextLength >= 0) TweLength.ForeColor = System.Drawing.Color.Black;
         }
 
         private void share_mv_Click(object sender, EventArgs e)

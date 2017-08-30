@@ -105,7 +105,7 @@
             this.share_img.Name = "share_img";
             this.share_img.Size = new System.Drawing.Size(332, 109);
             this.share_img.TabIndex = 8;
-            this.share_img.Text = "Let\'s Share Photo !";
+            this.share_img.Text = "Let\'s Share Tweet !";
             this.share_img.UseVisualStyleBackColor = true;
             this.share_img.Click += new System.EventHandler(this.share_img_Click);
             // 
